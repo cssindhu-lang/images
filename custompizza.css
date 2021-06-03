@@ -1,0 +1,8 @@
+#messages-list .conversation-item.not-mine .media .message-wrap p.desc.text-content {
+     border-radius: 0px 25px 25px 25px;
+      max-width: 270px;
+      padding: 8px 9px 8px 8px;
+      box-shadow: 2px 0px 3px -1px #ccc;
+      background: #a4ae7d;
+      color: #fff;
+}

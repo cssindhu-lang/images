@@ -1,0 +1,120 @@
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Help Menu</title>
+  <meta name="description" content="Help Menu">
+  <meta name="author" content="Avaamo">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <style>
+    body {
+      margin: 12px;
+      padding: 12px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .header {
+      display: flex;
+    }
+
+    .profile-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      margin: 24px;
+      border: solid 3px red;
+    }
+
+    .list-item-header {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .list-item {
+      cursor: pointer;
+      font-size: 14px;
+      padding-bottom: 10px;
+      color: gray;
+    }
+
+    .list-item:hover {
+      color: red;
+    }
+
+    hr {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid #ccc;
+      margin: 1em 0;
+      padding: 0;
+    }
+    
+  </style>
+
+</head>
+
+<body class="w3-container w3-animate-bottom">
+  <div>
+    <a onclick="closeWebView()" href="#" style="text-decoration: none; color: red;">
+      < <span style="color: black;">Back</span> </a>
+  </div>
+  <div>
+    <div class="header">
+      <img class="profile-img" src="https://i.pinimg.com/originals/2e/19/4e/2e194e71dbfe491c225185560df57f27.jpg"
+        alt="airAsia-agent">
+      <div>
+        <h1>Hi, I'm Mac</h1>
+        <p style="font-size: 14px;">I'm your MacPizza virtual assistant here to help! Here are some things you can ask me...</p>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <h5 class="list-item-header">About MacPizza</h5>
+      <div class="list-item" onclick="onMessageClick('How do I work?')">"How do I work?"</div>
+      <div class="list-item" onclick="onMessageClick('Am I safe and secure?')">"Am I safe and secure?"</div>
+    </div>
+    <hr />
+    <div>
+      <h5 class="list-item-header">Book an order</h5>
+      <div class="list-item" onclick="onMessageClick('I want to book a flight to Tokyo')">"I want order pizza"</div>
+      <div class="list-item" onclick="onMessageClick('Can I pre-order a vegetarian meal?')">"Can I pre-order a
+        vegan pizza?"</div>
+    </div>
+    <hr />
+    <div>
+      <h5 class="list-item-header">Order status</h5>
+      <div class="list-item" onclick="onMessageClick('Is my flight on time?')">"Is my order on time?"</div>
+      <div class="list-item" onclick="onMessageClick('Is there any new COVID-19 travel advisories?')">"Is there any new
+        vegan pizza?"</div>
+    </div>
+    <hr />
+    <div>
+      <h5 class="list-item-header">Change or cancel a order</h5>
+      <div class="list-item" onclick="onMessageClick('I want to cancel my flight')">"I want to cancel my order"</div>
+      <div class="list-item" onclick="onMessageClick('I want to change the name on my flight')">"I want to change the
+        toppings on my order"</div>
+    </div>
+    <hr />
+  </div>
+
+  <script>
+    function onMessageClick(msg) {
+      window.parent.postMessage({ hidden_content: null, message: msg, fn: "postMessage" }, "*")
+      closeWebView();
+    }
+    function closeWebView() {
+      window.parent.postMessage({ fn: "closeWebView"}, "*")
+    }
+  </script>
+</body>
+
+</html>
